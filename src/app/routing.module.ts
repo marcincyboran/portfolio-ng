@@ -10,11 +10,14 @@ import { BlogComponent } from './blog/blog.component';
 import { CvComponent } from './cv/cv.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { SkillsComponent } from './skills/skills.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
  {
@@ -39,15 +42,17 @@ const routes: Routes = [
 },
 {
   path: 'skills',
-  component: ContactComponent
+  component: SkillsComponent
 },
 {
   path: 'login',
-  component: AdminPanelComponent
+  component: LoginComponent
 },
 {
+  // Work fine with routerLink, but direct url always return false, why...?
   path: 'admin',
-  component: AdminPanelComponent
+  component: AdminPanelComponent,
+  canActivate: [AuthGuardService]
 },
 {
   path: '**',

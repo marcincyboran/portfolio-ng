@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { RoutingModule } from './routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
-// Components
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
@@ -18,7 +21,19 @@ import { ContactComponent } from './contact/contact.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { LoginComponent } from './login/login.component';
 import { SkillsComponent } from './skills/skills.component';
+import { AuthService } from './auth.service';
+import { FormsModule } from '@angular/forms';
 
+import { AuthGuardService } from './auth-guard.service';
+
+const config = {
+  apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
+  authDomain: 'portfolio-auth.firebaseapp.com',
+  databaseURL: 'https://portfolio-auth.firebaseio.com',
+  projectId: 'portfolio-auth',
+  storageBucket: 'portfolio-auth.appspot.com',
+  messagingSenderId: '361518364748'
+};
 
 @NgModule({
   declarations: [
@@ -40,8 +55,12 @@ import { SkillsComponent } from './skills/skills.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule,
+    FormsModule,
+    MatInputModule,
   ],
-  providers: [],
+  providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

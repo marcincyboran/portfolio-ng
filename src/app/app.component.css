@@ -1,15 +1,16 @@
 section {
-  background-color: #eee;
   display: flex;
   flex-flow: row wrap;
   height: 100vh;
 }
 
-section nav {
+section > nav {
   flex: 0 0 64px;
   background-color: #181818;
 }
 
-section main {
+section > main {
   flex: 1 1 1px;
+  background-color: #252627;
+  overflow: hidden;
 }
