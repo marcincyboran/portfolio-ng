@@ -1,16 +1,48 @@
+
 section {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   height: 100vh;
+  overflow: hidden;
+  color: white;
 }
 
 section > nav {
   flex: 0 0 64px;
+  /* height: 64px; */
   background-color: #181818;
+  overflow: hidden;
 }
 
 section > main {
-  flex: 1 1 1px;
+  flex: 1 1 0px;
   background-color: #252627;
   overflow: hidden;
+}
+
+@media screen and (min-width: 480px) {
+  section {
+    display: flex;
+    flex-flow: row wrap;
+    /* height: 100vh; */
+    /* overflow: hidden; */
+  }
+
+  section > nav {
+    /* flex: 0 0 64px; */
+    /* background-color: #181818; */
+    min-height: 600px;
+  }
+
+  section > main {
+    /* flex: 1 1 1px; */
+    /* background-color: #252627; */
+    /* overflow: hidden; */
+  }
+}
+
+@media screen and (max-width: 380px) {
+  section > main {
+    /* margin-top: 64px; */
+  }
 }

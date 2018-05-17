@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-nav',
@@ -10,12 +9,13 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
+  @ViewChild('menu') menuRef: ElementRef;
+
   admin: boolean;
 
-  constructor(public auth: AuthService, private router: Router) { }
+  constructor(public auth: AuthService, private router: Router) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   logout() {
     this.auth.logout();
@@ -23,5 +23,9 @@ export class NavComponent implements OnInit {
 
   adminPanel() {
     this.router.navigate(['/admin']);
+  }
+
+  showMenuPhone() {
+    this.menuRef.nativeElement.classList.toggle('hidden');
   }
 }
