@@ -12,7 +12,7 @@ export class AuthGuardService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
     if (this.auth.user && this.auth.user.email === 'admin@example.com') {
-      console.log('authGuard --- return true', this.auth.user);
+      // console.log('authGuard --- return true', this.auth.user);
       return true;
     }
     this.router.navigate(['/home']);

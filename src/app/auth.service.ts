@@ -10,10 +10,12 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 export class AuthService {
 
   user: User;
+
   constructor(private firebase: AngularFireAuth, private router: Router) {
+    console.log('Auth service');
     firebase.authState.subscribe(user => {
       this.user = user;
-      console.log('authState.subscribe---------', this.user);
+      // console.log('authState.subscribe---------', this.user);
     });
   }
 

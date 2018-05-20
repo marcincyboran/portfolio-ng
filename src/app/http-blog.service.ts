@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpParams } from '@angular/common/http';
 import { Post } from './interfaces/post';
 import { Observable } from 'rxjs';
 
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpBlogService {
+
   readonly URL_DB = 'https://api.mlab.com/api/1/databases/portfolio_blog/collections/posts';
   readonly param = new HttpParams().set(
     'apiKey',
@@ -15,8 +16,8 @@ export class HttpBlogService {
   );
 
   constructor(private http: HttpClient) {
-    this.getPosts();
-    console.log('Jestem');
+    console.log('Http service constructor');
+    // this.getPosts();
   }
 
   getPosts(): Observable<Array<Post>> {
@@ -24,8 +25,8 @@ export class HttpBlogService {
   }
 
   sendPost(post: Post): void {
-    this.http.put(this.URL_DB, post, { params: this.param }).subscribe(data => {
-      console.log(data);
+    this.http.post(this.URL_DB, post, { params: this.param }).subscribe(data => {
+      console.log('Wysłano post: ', data);
     });
   }
 }

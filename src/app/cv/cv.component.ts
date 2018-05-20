@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpBlogService } from '../http-blog.service';
 
 @Component({
   selector: 'app-cv',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CvComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

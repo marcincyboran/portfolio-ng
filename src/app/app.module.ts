@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuardService } from './auth-guard.service';
 // import { AgmCoreModule } from '@agm/core';
 import { HttpBlogService } from './http-blog.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const config = {
   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
@@ -61,6 +62,7 @@ const config = {
     AngularFireAuthModule,
     FormsModule,
     MatInputModule,
+    HttpClientModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4'
     // }),
