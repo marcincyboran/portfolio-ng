@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { HttpBlogService } from '../http-blog.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpBlogService) { }
 
   ngOnInit() {
   }
 
+  send(logForm: NgForm): void {
+  }
 }

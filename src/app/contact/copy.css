@@ -1,0 +1,89 @@
+.contactContainer {
+  display: flex;
+  height: calc(100vh - 64px);
+  /* height: 100%; */
+  /* background-color: red; */
+  flex-flow: column nowrap;
+}
+
+.contactContainer > div {
+  flex: 1 1 0;
+  position: relative;
+}
+
+.one {
+  /* overflow: scroll; */
+  /* background-color: azure; */
+
+}
+
+.one:before, .one:after {
+  position: absolute;
+  left: 5%;
+  font-family: 'Pacifico', cursive;
+  font-style: italic;
+  font-size: 1em;
+  color: rgba(166, 166, 166, 0.2);
+}
+
+.one:before {
+  content: '<body>';
+  top: 5%;
+}
+
+.one:after {
+  content: '</body>';
+  bottom: 5%;
+}
+
+.one > h1 {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+
+}
+
+.one >h1:before, .one > h1:after {
+  font-family: 'Pacifico', cursive;
+  font-style: italic;
+  font-size: .5em;
+  color: rgba(166, 166, 166, 0.2);
+  display: block;
+  margin: 10px;
+  margin-left: -20px;
+
+}
+
+.one >h1:before {
+  content: '<h1>'
+}
+
+.one >h1:after {
+  content: '</h1>'
+}
+.two {
+  height: 400px;
+  background-color: aquamarine;
+}
+.two #map {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .contactContainer {
+    height: 100%;
+    flex-flow: row nowrap;
+  }
+  .two {
+    height: 100%;
+  }
+  /* .two #map {
+    width: 100%;
+    height: 100%;
+  } */
+}

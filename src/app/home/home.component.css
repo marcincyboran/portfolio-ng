@@ -1,8 +1,88 @@
- div.con {
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
- }
-/* :host {
-  color: white;
-} */
+:host {
+  display: block;
+  height: 100%;
+  overflow: auto;
+}
+
+div.intro {
+  position: relative;
+  margin-top: 75px;
+  padding: 0 30px;
+  margin-bottom: 50px;
+  max-width: 700px;
+  /* overflow: auto; */
+
+}
+
+div.intro h1 {
+  font-size: 2em;
+}
+
+div.intro h2 {
+  font-size: 1.5em;
+}
+
+div.intro p {
+  text-align: justify;
+}
+
+div.intro ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+div.intro ul li {
+  flex-basis: 64px;
+  padding: 5px;
+  margin: 5px;
+}
+
+div.intro ul li img {
+  max-width: 100%;
+  transform: scale(1);
+  transition: all .2s linear;
+}
+
+div.intro ul li img:hover {
+  transform: scale(1.3);
+}
+
+div.intro:before,
+div.intro:after {
+  position: absolute;
+  display: block;
+  left: 40px;
+  font-family: 'Pacifico', cursive;
+  font-style: italic;
+  font-size: 1em;
+  color: rgba(166, 166, 166, 0.2);
+}
+
+div.intro:before {
+  content: '<info>';
+  top: -40px;
+}
+
+div.intro:after {
+  content: '</info>';
+  bottom: -40px;
+}
+
+@media screen and (min-width: 768px) {
+  div.intro {
+    padding: 0 50px;
+  }
+  div.intro p {
+    padding-left: 25px;
+  }
+  div.intro h1 {
+    margin-bottom: 40px;
+  }
+  div.list-wrapper {
+    margin-top: 40px;
+  }
+}

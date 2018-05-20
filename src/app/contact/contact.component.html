@@ -1,1 +1,53 @@
-contact
+<div class="contactContainer">
+  <div class="one">
+
+    <div id="formWrapper">
+      <h1>
+        Ask me anything
+      </h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, doloremque! Debitis aperiam, nihil ducimus quo perferendis
+        ratione, repudiandae assumenda soluta dignissimos tempora illo distinctio cumque doloremque. Atque libero ducimus
+        quam?
+      </p>
+      <form class="contactForm" #contactForm="ngForm">
+
+        <div class="formRow">
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Your name</mat-label>
+            <input ngModel matInput placeholder="" maxlength="20" type="text" name="name" required>
+            <!-- <mat-error *ngIf="">error</mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input ngModel matInput placeholder="" maxlength="20" type="email" name="email" required>
+            <!-- <mat-error *ngIf="">error</mat-error> -->
+          </mat-form-field>
+        </div>
+
+        <mat-form-field color="accent" appearance="outline">
+          <mat-label>Subject</mat-label>
+          <input ngModel matInput placeholder="" maxlength="20" type="subject" name="subject" required>
+          <!-- <mat-error *ngIf="">error</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field color="accent" appearance="outline">
+          <mat-label>Message...</mat-label>
+          <textarea rows="4" ngModel matInput placeholder="" maxlength="20" type="message" name="message" required>
+          </textarea>
+          <!-- <mat-error *ngIf="">error</mat-error> -->
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" color="warn" [disabled]="">Ask</button>
+
+
+      </form>
+    </div>
+
+
+  </div>
+  <div class="two">
+    <div id="map" #gmap></div>
+  </div>
+</div>

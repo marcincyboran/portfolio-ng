@@ -25,6 +25,8 @@ import { AuthService } from './auth.service';
 import { FormsModule } from '@angular/forms';
 
 import { AuthGuardService } from './auth-guard.service';
+// import { AgmCoreModule } from '@agm/core';
+import { HttpBlogService } from './http-blog.service';
 
 const config = {
   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
@@ -59,8 +61,11 @@ const config = {
     AngularFireAuthModule,
     FormsModule,
     MatInputModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4'
+    // }),
   ],
-  providers: [AuthGuardService, AuthService],
+  providers: [AuthGuardService, AuthService, HttpBlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

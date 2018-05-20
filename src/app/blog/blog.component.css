@@ -1,3 +1,122 @@
 :host {
-  color: white;
+  height: 100%;
+}
+
+.blog-container {
+  max-width: 1140px;
+  min-width: 900px;
+  margin: 0 auto;
+}
+
+.blog-container > h1 {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.current-post {
+  padding: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: rgba(255, 255, 255, .1);
+  margin-bottom: 80px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.current-post-img {
+  flex: 0 0 35%;
+  background: url("./../../assets/123.jpg") center center/cover;
+  max-height: 200px;
+}
+
+
+.current-post-body {
+  flex: 1 1 65%;
+  padding-left: 80px;
+  position: relative;
+}
+
+.current-post-body .current-post-body-header,
+.current-post-body .current-post-body-date {
+  margin-bottom: 20px;
+  font-style: italic
+
+}
+
+.current-post-body .current-post-body-text {
+  text-align: justify;
+  line-height: 150%;
+  padding-bottom: 60px;
+}
+
+.current-post-body .current-post-body-date {
+  text-align: right;
+}
+
+.current-post-body .current-post-body-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: all .3s ease-in-out;
+}
+
+.current-post-body .current-post-body-button:hover {
+  transform: translateY(5px);
+}
+
+.others {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.other-post {
+  flex: 0 0 30%;
+  min-height: 200px;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, .05);
+  padding: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s ease-in-out;
+}
+.other-post:hover {
+  background-color: rgba(255, 255, 255, .15);
+
+}
+.other-post-img {
+  height: 200px;
+  background: url("./../../assets/123.jpg") no-repeat center/cover;
+
+}
+
+.other-post-body {
+  position: relative;
+}
+
+.other-post-body .other-post-body-header {
+  margin: 15px 0;
+  /* text-indent: 1em; */
+}
+.other-post-body .other-post-body-date {
+  text-align: right;
+  margin-bottom: 10px;
+  font-style: italic
+}
+
+.other-post-body .other-post-body-text {
+  text-align: justify;
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+.other-post-body .other-post-body-button {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
 }
