@@ -1,52 +1,34 @@
-<div *ngFor="let post of posts">
+<img class="loading" *ngIf="isLoading" src="./../../assets/loading.svg" alt="loading gif">
+<h1 class="loadingError" *ngIf="loadingError">Something went wrong duhh : (</h1>
 
-</div>
-
-<div class="blog-container" >
-  <h1>Blog</h1>
+<div class="blog-container">
+  <h1 *ngIf="!isLoading && !loadingError">Blog</h1>
 
   <div class="current-post" *ngIf="currentPost">
-    <div class="current-post-img">
+    <div class="current-post-img" [ngStyle]="{'background-image': 'url(' + currentPost.img_url + ')' }">
     </div>
     <div class="current-post-body">
       <h1 class="current-post-body-header">{{currentPost.title | uppercase}}</h1>
       <p class="current-post-body-date">{{currentPost.created}}</p>
-      <p class="current-post-body-text">{{currentPost.text}}</p>
-        <button mat-raised-button color="warn" class="current-post-body-button">Read more...</button>
+      <p class="current-post-body-text">{{currentPost.text_short || currentPost.text}}</p>
+      <button mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(currentPost)">Read more...</button>
     </div>
+    <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(currentPost)" >delete_forever</mat-icon>
   </div>
 
   <div class="others">
     <div class="other-post" *ngFor="let post of posts | slice:1">
-      <div class="other-post-img">
+      <div class="other-post-img" [ngStyle]="{'background-image': 'url(' + post.img_url + ')' }">
       </div>
       <div class="other-post-body">
         <h2 class="other-post-body-header">{{post.title | uppercase}}</h2>
         <p class="other-post-body-date">{{post.created}}</p>
-        <p class="other-post-body-text">{{post.text}}</p>
-        <button mat-raised-button color="warn" class="other-post-body-button">Read more...</button>
+        <p class="other-post-body-text">{{post.text_short || post.text}}</p>
+        <button mat-raised-button color="warn" class="other-post-body-button" (click)="showPost(post)">Read more...</button>
       </div>
+      <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(post)">delete_forever</mat-icon>
+
     </div>
 
-    <!-- <div class="other-post">
-      <div class="other-post-img">
-      </div>
-      <div class="other-post-body">
-        <h2 class="other-post-body-header">Current post</h2>
-        <p class="other-post-body-date">2018/05/20</p>
-        <p class="other-post-body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam molestiae similique, culpa dolorem nulla adipisci
-          dolores praesentium perspiciatis eveniet necessitatibus corporis, sint minima quos! Debitis unde nihil cupiditate
-          quo magni?</p>
-        <button mat-raised-button color="warn" class="other-post-body-button">Read more...</button>
-      </div>
-    </div>
-    <div class="other-post">2</div>
-    <div class="other-post">3</div>
-    <div class="other-post">4</div>
-    <div class="other-post">5</div>
-    <div class="other-post">6</div>
-    <div class="other-post">7</div>
-    <div class="other-post">8</div>
-    <div class="other-post">9</div> -->
   </div>
 </div>
