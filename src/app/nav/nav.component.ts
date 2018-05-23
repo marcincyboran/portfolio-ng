@@ -11,18 +11,12 @@ export class NavComponent implements OnInit {
 
   @ViewChild('menu') menuRef: ElementRef;
 
-  admin: boolean;
-
-  constructor(public auth: AuthService, private router: Router) {}
+  constructor(public auth: AuthService) {}
 
   ngOnInit() {}
 
   logout() {
     this.auth.logout();
-  }
-
-  adminPanel() {
-    this.router.navigate(['/admin']);
   }
 
   showMenuPhone() {

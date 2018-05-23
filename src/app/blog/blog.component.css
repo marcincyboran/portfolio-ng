@@ -1,5 +1,4 @@
 :host {
-  height: 100%;
 }
 
 .loading, .loadingError {
@@ -27,8 +26,9 @@
 .blog-container {
   width: 100%;
   padding: 10px;
+  background-color: brown;
   /* min-width: 900px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .blog-container>h1 {
   text-align: center;

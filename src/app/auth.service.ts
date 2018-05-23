@@ -8,13 +8,14 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
   user: User;
+  admin: User;
 
   constructor(private firebase: AngularFireAuth, private router: Router) {
     console.log('Auth service');
     firebase.authState.subscribe(user => {
       this.user = user;
+      (user && user.email === 'admin@example.com') ? this.admin = user : this.admin = null;
       // console.log('authState.subscribe---------', this.user);
     });
   }
@@ -54,5 +55,4 @@ export class AuthService {
   goHome(): void {
     this.router.navigate(['/home']);
   }
-
 }

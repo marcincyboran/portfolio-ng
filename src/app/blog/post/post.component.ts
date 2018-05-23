@@ -11,7 +11,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class PostComponent implements OnInit {
   post: Post;
-
+  isLoading = true;
+  loadingError = false;
   constructor(private http: HttpBlogService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -23,9 +24,12 @@ export class PostComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         console.log('Wild error appears', error);
+        this.loadingError = true;
+        this.isLoading = false;
       },
       () => {
         console.log('completed');
+        this.isLoading = false;
       }
     );
   }

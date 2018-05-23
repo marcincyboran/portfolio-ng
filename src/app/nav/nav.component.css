@@ -4,6 +4,10 @@
   height: 100%;
 }
 
+div.phone {
+  display: none;
+}
+
 .logo {
   flex: 0 0 64px;
   display: flex;
@@ -12,7 +16,7 @@
   padding: 10px;
 }
 
-.logo > img {
+.logo>img {
   max-width: 100%;
   border-radius: 50%;
   /* border: 1px solid #eee; */
@@ -25,7 +29,6 @@
   justify-content: space-around;
   align-items: stretch;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
-
 }
 
 .navigation>div {
@@ -71,12 +74,11 @@
 }
 
 .navigation>div.logged {
-  color: #990000;
+  color: #F44336
 }
 
 .navigation div.phone {
   display: none;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -87,14 +89,12 @@
   }
   .logo {
     flex: 0 0 96px;
-
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .navigation {
-    flex: 5 0 0px;
-
+    flex: 5 0 400px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -108,11 +108,9 @@
     width: 100%;
     cursor: pointer;
     outline: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: all .2s linear;
     transform: scale(1);
   }
@@ -133,37 +131,25 @@
     font-size: 1em;
     transform: translateX(10%);
   }
-
   .navigation>div:hover:before {
     opacity: 1;
   }
-
   .social {
+    flex: 1 0 100px;
     display: flex;
-    flex-grow: 1;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
   }
-
   .navigation>div.navactive {
     color: #eee;
-  }
-
-  .navigation>div.logged {
-    color: #990000;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .con {
-
-  }
-  .logo {
-    color: red;
-  }
+  .con {}
   .navigation {
-    position: absolute;
+    position: fixed;
     top: 64px;
     display: flex;
     height: 64px;
@@ -171,30 +157,26 @@
     background-color: #181818;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 100;
   }
-  .navigation > div {
+  .navigation>div {
     height: 100%;
   }
-
-  .navigation > div.phone {
+  div.phone {
     position: fixed;
     top: 0;
     right: 0;
     display: flex;
-    max-height: 64px;
+    height: 64px;
     width: 64px;
     justify-content: center;
     align-items: center;
-    transition: max-height .5s linear;
   }
-
   .navigation.hidden {
-    height: 0;
+    display: none;
   }
-
-  .navigation>div:hover.phone {
+  div.phone:hover {
     transform: scale(1.3);
     color: #eee;
     font-size: 1.2em;

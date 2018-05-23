@@ -1,3 +1,205 @@
 :host {
+  display: block;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+a {
   color: white;
+}
+
+.cv-container {
+  width: 100%;
+  padding: 10px;
+  background-color: #eee;
+  margin-top: 64px;
+  min-height: 700px;
+  /* min-width: 900px; */
+  /* margin: 0 auto; */
+}
+
+.cv-container:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.cv-side-left,
+.cv-side-right {
+  height: 100%;
+  width: 100%;
+}
+
+.cv-side-left {
+  background: rgb(18, 108, 186);
+  background: -moz-linear-gradient(-45deg, rgba(18, 108, 186, 1) 0%, rgba(2, 116, 204, 1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(18, 108, 186, 1) 0%, rgba(2, 116, 204, 1) 100%);
+  background: linear-gradient(135deg, rgba(18, 108, 186, 1) 0%, rgba(2, 116, 204, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#126cba', endColorstr='#0274cc', GradientType=1);
+}
+
+.cv-side-right {
+  background: rgb(57, 60, 65);
+  background: -moz-linear-gradient(-45deg, rgba(57, 60, 65, 1) 0%, rgba(67, 67, 67, 1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(57, 60, 65, 1) 0%, rgba(67, 67, 67, 1) 100%);
+  background: linear-gradient(135deg, rgba(57, 60, 65, 1) 0%, rgba(67, 67, 67, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#393c41', endColorstr='#434343', GradientType=1);
+}
+
+.cv-side-left .img {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* background-color: rgba(67, 67, 67, 1); */
+}
+
+.cv-side-left .img>img {
+  border-radius: 50%;
+  height: 80%;
+  border: 2px solid #eee;
+}
+
+.cv-side-left .personal-heading,
+.cv-side-left .experience-heading,
+.cv-side-left .personality-heading,
+.cv-side-left .software-heading {
+  position: relative;
+  padding-left: 65px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px
+}
+
+.cv-side-left .personal-body,
+.cv-side-left .personality-body,
+.cv-side-left .software-body,
+.cv-side-left .experience-body {
+  padding-left: 40px;
+  margin-bottom: 20px
+}
+
+.cv-side-left .personal-body>div {
+  position: relative;
+}
+
+.cv-side-left .personal-body>div>i {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cv-side-left .personal-body>div>p {
+  margin-left: 35px;
+}
+
+.cv-side-left .experience-body>div {
+  margin-bottom: 15px;
+}
+
+.cv-side-left .experience-body .details {
+  margin-top: 5px;
+  /* font-style: italic; */
+  /* font-weight: lighter; */
+}
+
+.cv-side-left .personality-body>p::before {
+  content: "\2714";
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.cv-side-left .software-body>div {
+  padding: 4px;
+  /* background-color: antiquewhite; */
+}
+
+.cv-side-left .software-body>div:hover > p {
+  padding-left: 20px;
+}
+
+.cv-side-left .software-body>div>p {
+  display: inline-block;
+  width: 50%;
+
+  transition: all .3s .2s linear;
+
+}
+
+.cv-side-left .software-body>div>i {
+  margin-right: 5px;
+  transition: color .2s linear;
+}
+
+.cv-side-left .software-body>div>i.semi-transparent {
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+
+.cv-side-left .personal-heading>h2,
+.cv-side-left .experience-heading>h2,
+.cv-side-left .personality-heading>h2,
+.cv-side-left .software-heading>h2 {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  width: 100%;
+  transition: all .5s linear;
+}
+
+.cv-side-left .personal-heading:before,
+.cv-side-left .experience-heading:before,
+.cv-side-left .personality-heading:before,
+.cv-side-left .software-heading:before {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-color: brown;
+}
+
+.cv-side-left .personal-heading>mat-icon,
+.cv-side-left .experience-heading>mat-icon,
+.cv-side-left .personality-heading>mat-icon,
+.cv-side-left .software-heading>mat-icon {
+  box-sizing: content-box;
+  position: absolute;
+  padding: 6px;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(57, 60, 65);
+  background-color: white;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 480px) {
+  .cv-container {
+    padding: 20px;
+  }
+  .cv-side-left,
+  .cv-side-right {
+    min-height: 500px;
+    float: left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cv-container {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 64px;
+  }
+  .cv-side-left .personality-body>p {
+    display: inline-block;
+    width: 50%;
+  }
 }

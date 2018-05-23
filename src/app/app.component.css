@@ -1,41 +1,32 @@
-
-section {
-  display: flex;
-  flex-flow: column nowrap;
-  min-height: 100vh;
-  overflow: hidden;
+:host {
   color: white;
 }
 
-section > nav {
-  flex: 0 0 64px;
-  /* height: 64px; */
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 64px;
+  width: 100%;
   background-color: #181818;
   overflow: hidden;
+  z-index: 99;
 }
 
-section > main {
-  flex: 1 1 0px;
+main {
   background-color: #252627;
-  overflow: auto;
-  min-height: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 64px
 }
 
 @media screen and (min-width: 768px) {
-  section {
-    display: flex;
-    flex-flow: row wrap;
-    height: 100vh;
-    overflow: auto;
+  nav {
+    height: 100%;
+    width: 64px;
   }
-
-  section > main {
-    min-height: 0;
-    overflow: auto;
+  main {
+    margin-left: 64px;
+    padding-top: 0px
   }
-
-}
-
-@media screen and (max-width: 380px) {
-
 }

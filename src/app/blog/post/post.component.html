@@ -1,3 +1,6 @@
+<img class="loading" *ngIf="isLoading" src="./../../assets/loading.svg" alt="loading gif">
+<h1 class="loadingError" *ngIf="loadingError">Something went wrong duhh : (</h1>
+
 <div *ngIf="post">
 
   <h1>{{post.title}}</h1>

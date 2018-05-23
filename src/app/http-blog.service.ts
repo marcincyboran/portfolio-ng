@@ -12,7 +12,7 @@ export class HttpBlogService {
   readonly URL_DB = 'https://api.mlab.com/api/1/databases/portfolio_blog/collections/posts';
   readonly param = new HttpParams().set(
     'apiKey',
-    '3jyBlNhlN2LoIgTlqc4Bx-D6AHwO5sV1'
+    'nZ4X3O7K8gYk47-neLjlvUwF4W56ReLg'
   );
 
   constructor(private http: HttpClient) {
@@ -24,9 +24,21 @@ export class HttpBlogService {
     return this.http.get<Array<Post>>(this.URL_DB, { params: this.param });
   }
 
+  getPost(id: string): Observable<Post> {
+    return this.http.get<Post>(this.URL_DB + '/' + id, { params: this.param});
+  }
+
   sendPost(post: Post): void {
-    this.http.post(this.URL_DB, post, { params: this.param }).subscribe(data => {
+    this.http.post<Post>(this.URL_DB, post, { params: this.param }).subscribe(data => {
       console.log('Wysłano post: ', data);
+    });
+  }
+
+  deletePost(post: Post): void {
+    const id = post._id.$oid;
+
+    this.http.delete(this.URL_DB + '/' + id, { params: this.param }).subscribe(data => {
+      console.log('Deleted post: ', data);
     });
   }
 }

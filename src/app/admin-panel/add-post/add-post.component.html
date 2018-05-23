@@ -1,0 +1,30 @@
+<form class="post-form" (ngSubmit)=send(postForm) #postForm="ngForm">
+
+  <mat-form-field color="accent">
+    <mat-label>Title</mat-label>
+    <input ngModel matInput placeholder="" maxlength="20" type="text" name="title" required>
+    <!-- <mat-icon matSuffix>assignment_ind</mat-icon> -->
+    <!-- <mat-error *ngIf="">error</mat-error> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field color="accent">
+    <mat-label>img</mat-label>
+    <input ngModel matInput placeholder="" type="url" name="img" required>
+    <!-- <mat-icon matSuffix>lock_open</mat-icon> -->
+    <!-- <mat-error *ngIf="">error</mat-error> -->
+    <!-- <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint> -->
+  </mat-form-field>
+  <br>
+
+  <mat-form-field color="accent">
+    <mat-label>Text</mat-label>
+    <textarea ngModel matInput placeholder="" type="text" name="text" required></textarea>
+    <!-- <mat-icon matSuffix>lock_open</mat-icon> -->
+    <!-- <mat-error *ngIf="">error</mat-error> -->
+    <!-- <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+          <mat-hint align="end">{{message.value.length}} / 256</mat-hint> -->
+  </mat-form-field>
+  <button mat-raised-button type="submit" [disabled]="postForm.invalid">Add post</button>
+
+</form>

@@ -28,6 +28,9 @@ import { AuthGuardService } from './auth-guard.service';
 // import { AgmCoreModule } from '@agm/core';
 import { HttpBlogService } from './http-blog.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddPostComponent } from './admin-panel/add-post/add-post.component';
+import { LoggerComponent } from './admin-panel/logger/logger.component';
+import { PostComponent } from './blog/post/post.component';
 
 const config = {
   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
@@ -50,7 +53,10 @@ const config = {
     ContactComponent,
     AdminPanelComponent,
     LoginComponent,
-    SkillsComponent
+    SkillsComponent,
+    AddPostComponent,
+    LoggerComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
