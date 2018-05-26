@@ -1,23 +1,22 @@
 <img class="loading" *ngIf="isLoading" src="./../../assets/loading.svg" alt="loading gif">
 <h1 class="loadingError" *ngIf="loadingError">Something went wrong duhh : (</h1>
 
-<div class="blog-container">
-  <h1 *ngIf="!isLoading && !loadingError">Blog</h1>
-
-  <div class="current-post" *ngIf="currentPost">
-    <div class="current-post-img" [ngStyle]="{'background-image': 'url(' + currentPost.img_url + ')' }">
+<div class="blog-container" *ngIf="!isLoading && !loadingError">
+  <h1>Blog</h1>
+  <div class="current-post">
+    <div class="current-post-img" [ngStyle]="{'background-image': 'url(' + posts[0].img_url + ')' }">
     </div>
     <div class="current-post-body">
-      <h1 class="current-post-body-header">{{currentPost.title | uppercase}}</h1>
-      <p class="current-post-body-date">{{currentPost.created}}</p>
-      <p class="current-post-body-text">{{currentPost.text_short || currentPost.text}}</p>
-      <button mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(currentPost)">Read more...</button>
+      <h1 class="current-post-body-header">{{posts[0].title | uppercase}}</h1>
+      <p class="current-post-body-date">{{posts[0].created}}</p>
+      <p class="current-post-body-text">{{posts[0].text_short}}</p>
+      <button mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(posts[0])">Read more...</button>
     </div>
-    <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(currentPost)" >delete_forever</mat-icon>
+    <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(posts[0])">delete_forever</mat-icon>
   </div>
 
   <div class="others">
-    <div class="other-post" *ngFor="let post of posts | slice:1">
+    <div class="other-post" *ngFor="let post of posts | slice:page*itemsOnPage-itemsOnPage+1:page*itemsOnPage+1">
       <div class="other-post-img" [ngStyle]="{'background-image': 'url(' + post.img_url + ')' }">
       </div>
       <div class="other-post-body">
@@ -27,8 +26,7 @@
         <button mat-raised-button color="warn" class="other-post-body-button" (click)="showPost(post)">Read more...</button>
       </div>
       <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(post)">delete_forever</mat-icon>
-
     </div>
-
   </div>
+  <app-pagination [allPosts]="posts" [itemsOnPage]="itemsOnPage" (eventPage)="currentPage($event)" *ngIf="posts.length > itemsOnPage"></app-pagination>
 </div>

@@ -1,0 +1,13 @@
+<section>
+  <ul>
+    <li (click)="prev()" *ngIf="currentPage !== 1">
+      &lt;&lt;
+    </li>
+    <li *ngFor="let page of pages" (click)="changePage(page)" [ngClass]="{'active' : currentPage === page}">
+      {{page}}
+    </li>
+    <li (click)="next()" *ngIf="currentPage !== pages.length">
+      &gt;&gt;
+    </li>
+  </ul>
+</section>

@@ -1,11 +1,11 @@
-:host {
-}
+:host {}
 
-.loading, .loadingError {
+.loading,
+.loadingError {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .delete {
@@ -15,7 +15,7 @@
 }
 
 .delete:hover {
-  color: #F44336
+  color: #F44336;
 }
 
 .current-post .delete {
@@ -26,17 +26,19 @@
 .blog-container {
   width: 100%;
   padding: 10px;
-  background-color: brown;
+  margin-bottom: 80px;
+  /* background-color: brown; */
   /* min-width: 900px; */
   /* margin: 0 auto; */
 }
+
 .blog-container>h1 {
   text-align: center;
   padding: 50px 0;
 }
+
 .current-post {
   position: relative;
-
   padding: 10px;
   display: flex;
   flex-flow: column nowrap;
@@ -46,6 +48,7 @@
   border-radius: 10px;
   overflow: hidden;
 }
+
 .current-post-img {
   flex: 0 0 200px;
   background-image: url("./../../assets/no-img.jpg");
@@ -54,48 +57,55 @@
   background-size: cover;
   max-height: 200px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-
 }
+
 .current-post-body {
   flex: 1 1 65%;
   padding: 0px;
   position: relative;
 }
+
 .current-post-body .current-post-body-header,
 .current-post-body .current-post-body-date {
   margin-bottom: 20px;
   font-style: italic
 }
+
 .current-post-body .current-post-body-text {
   text-align: justify;
   line-height: 150%;
   padding-bottom: 60px;
 }
+
 .current-post-body .current-post-body-date {
   text-align: right;
 }
+
 .current-post-body .current-post-body-button {
   position: absolute;
   bottom: 0;
   right: 0;
   transition: all .3s ease-in-out;
 }
+
 .current-post-body .current-post-body-button:hover {
   transform: translateY(5px);
 }
+
 .others {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
 }
+
 .other-post .delete {
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
+
 .other-post {
   position: relative;
-
   flex: 0 0 48%;
   min-height: 200px;
   margin-bottom: 30px;
@@ -107,9 +117,11 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s ease-in-out;
 }
+
 .other-post:hover {
   background-color: rgba(255, 255, 255, .15);
 }
+
 .other-post-img {
   height: 200px;
   background-image: url("./../../assets/no-img.jpg");
@@ -118,24 +130,30 @@
   background-size: cover;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
 .other-post-body {
   position: relative;
 }
+
 .other-post-body .other-post-body-header {
   margin: 15px 0;
+  min-height: 80px;
   /* text-indent: 1em; */
 }
+
 .other-post-body .other-post-body-date {
   text-align: right;
   margin-bottom: 10px;
   font-style: italic
 }
+
 .other-post-body .other-post-body-text {
   text-align: justify;
   overflow: hidden;
   margin-bottom: 20px;
   height: 150px;
 }
+
 .other-post-body .other-post-body-button {
   position: relative;
   left: 50%;
@@ -153,6 +171,7 @@
   .blog-container {
     max-width: 1140px;
     margin: 0 auto;
+    margin-bottom: 80px;
   }
   .blog-container>h1 {
     text-align: center;

@@ -31,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './admin-panel/add-post/add-post.component';
 import { LoggerComponent } from './admin-panel/logger/logger.component';
 import { PostComponent } from './blog/post/post.component';
+import { PaginationComponent } from './blog/pagination/pagination.component';
 
 const config = {
   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
@@ -56,7 +57,8 @@ const config = {
     SkillsComponent,
     AddPostComponent,
     LoggerComponent,
-    PostComponent
+    PostComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

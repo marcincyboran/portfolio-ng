@@ -12,15 +12,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  @ViewChild('loading') loading: ElementRef;
+  // @ViewChild('loading') loading: ElementRef;
   posts: Array<Post>;
-  currentPost: Post;
   isLoading = true;
   loadingError = false;
+  page = 1;
+  itemsOnPage = 3;
 
   constructor(
-    private http: HttpBlogService,
     public auth: AuthService,
+    private http: HttpBlogService,
     private router: Router
   ) {}
 
@@ -28,8 +29,7 @@ export class BlogComponent implements OnInit {
     this.http.getPosts().subscribe(
       data => {
         console.log('Blog ngOninit get post subscribe', data);
-        this.posts = data.reverse(); // First is newest in DB
-        this.currentPost = data[0];
+        this.posts = data.reverse(); // First is newest in DB??
       },
       (error: HttpErrorResponse) => {
         console.log('Wild error appears', error);
@@ -50,5 +50,9 @@ export class BlogComponent implements OnInit {
   deletePost(post: Post): void {
     this.http.deletePost(post);
     this.router.navigate(['home']);
+  }
+
+  currentPage(currentPage: number): void  {
+    this.page = currentPage;
   }
 }
