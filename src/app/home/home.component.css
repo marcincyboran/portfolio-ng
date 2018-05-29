@@ -1,58 +1,20 @@
 :host {
   display: block;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
 }
 
-div.intro {
+.container-intro {
   position: relative;
-  margin-top: 75px;
-  padding: 0 30px;
-  margin-bottom: 50px;
   max-width: 700px;
+  padding: 10px 30px;
+  margin-top: 75px;
+  margin-bottom: 50px;
   /* overflow: auto; */
-
 }
 
-div.intro h1 {
-  font-size: 2em;
-}
-
-div.intro h2 {
-  font-size: 1.5em;
-}
-
-div.intro p {
-  text-align: justify;
-}
-
-div.intro ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-flow: row wrap;
-  position: relative;
-}
-
-div.intro ul li {
-  flex-basis: 64px;
-  padding: 5px;
-  margin: 5px;
-}
-
-div.intro ul li img {
-  max-width: 100%;
-  transform: scale(1);
-  transition: all .2s linear;
-}
-
-div.intro ul li img:hover {
-  transform: scale(1.3);
-}
-
-div.intro:before,
-div.intro:after {
+.container-intro:before,
+.container-intro:after {
   position: absolute;
   display: block;
   left: 40px;
@@ -62,27 +24,64 @@ div.intro:after {
   color: rgba(166, 166, 166, 0.2);
 }
 
-div.intro:before {
+.container-intro:before {
   content: '<info>';
   top: -40px;
 }
 
-div.intro:after {
+.container-intro:after {
   content: '</info>';
   bottom: -40px;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+ul li {
+  flex-basis: 64px;
+  padding: 5px;
+  margin: 5px;
+}
+
+ul li img {
+  max-width: 100%;
+  transform: scale(1);
+  transition: all .2s linear;
+}
+
+ul li img:hover {
+  transform: scale(1.3);
+}
+
 @media screen and (min-width: 768px) {
-  div.intro {
-    padding: 0 50px;
+  .container-intro {
+    padding: 0px 50px;
   }
-  div.intro p {
+  p {
     padding-left: 25px;
   }
-  div.intro h1 {
+  h1 {
     margin-bottom: 40px;
   }
-  div.list-wrapper {
+  .list-wrapper {
     margin-top: 40px;
   }
 }

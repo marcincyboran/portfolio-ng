@@ -3,14 +3,16 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import url('https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Roboto&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&subset=latin-ext');
 
 /*
 font-family: 'Pacifico', cursive;
 font-family: 'Roboto', sans-serif;
 */
 
-
+body {
+  font-size: 16px;
+}
 h1,h2,h3, p {
   margin: 0;
   padding: 0;
@@ -18,7 +20,8 @@ h1,h2,h3, p {
 
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+  line-height: 145%;
 }
 
 *::after {
@@ -28,6 +31,9 @@ h1,h2,h3, p {
 *::before {
   box-sizing: border-box;
 }
+
+
+/* ---------------- SCROLBAR --------------- */
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

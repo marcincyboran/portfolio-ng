@@ -10,7 +10,7 @@
       <h1 class="current-post-body-header">{{posts[0].title | uppercase}}</h1>
       <p class="current-post-body-date">{{posts[0].created}}</p>
       <p class="current-post-body-text">{{posts[0].text_short}}</p>
-      <button mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(posts[0])">Read more...</button>
+      <button appLoger mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(posts[0])">Read more...</button>
     </div>
     <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(posts[0])">delete_forever</mat-icon>
   </div>
@@ -23,7 +23,7 @@
         <h2 class="other-post-body-header">{{post.title | uppercase}}</h2>
         <p class="other-post-body-date">{{post.created}}</p>
         <p class="other-post-body-text">{{post.text_short || post.text}}</p>
-        <button mat-raised-button color="warn" class="other-post-body-button" (click)="showPost(post)">Read more...</button>
+        <button appLoger mat-raised-button color="warn" class="other-post-body-button" (click)="showPost(post)">Read more...</button>
       </div>
       <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(post)">delete_forever</mat-icon>
     </div>

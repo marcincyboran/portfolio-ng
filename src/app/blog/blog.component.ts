@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Post } from '../interfaces/post';
-import { HttpBlogService } from '../http-blog.service';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth.service';
+import { HttpBlogService } from '../_services/http-blog.service';
 
 @Component({
   selector: 'app-blog',

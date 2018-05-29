@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RoutingModule } from './routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -21,17 +21,17 @@ import { ContactComponent } from './contact/contact.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { LoginComponent } from './login/login.component';
 import { SkillsComponent } from './skills/skills.component';
-import { AuthService } from './auth.service';
-import { FormsModule } from '@angular/forms';
-
-import { AuthGuardService } from './auth-guard.service';
-// import { AgmCoreModule } from '@agm/core';
-import { HttpBlogService } from './http-blog.service';
-import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './admin-panel/add-post/add-post.component';
 import { LoggerComponent } from './admin-panel/logger/logger.component';
 import { PostComponent } from './blog/post/post.component';
 import { PaginationComponent } from './blog/pagination/pagination.component';
+
+import { LogerDirective } from './_directives/loger.directive';
+
+// import { AgmCoreModule } from '@agm/core';
+import { AuthService } from './_services/auth.service';
+import { AuthGuardService } from './_services/auth-guard.service';
+import { HttpBlogService } from './_services/http-blog.service';
 
 const config = {
   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
@@ -58,7 +58,8 @@ const config = {
     AddPostComponent,
     LoggerComponent,
     PostComponent,
-    PaginationComponent
+    PaginationComponent,
+    LogerDirective
   ],
   imports: [
     BrowserModule,

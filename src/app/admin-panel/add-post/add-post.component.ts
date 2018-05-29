@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HttpBlogService } from '../../http-blog.service';
 import { Post } from '../../interfaces/post';
+import { HttpBlogService } from '../../_services/http-blog.service';
 
 @Component({
   selector: 'app-add-post',

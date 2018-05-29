@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HttpBlogService } from '../../http-blog.service';
 import { Post } from '../../interfaces/post';
 import { HttpErrorResponse } from '@angular/common/http';
+import { HttpBlogService } from '../../_services/http-blog.service';
 
 @Component({
   selector: 'app-post',

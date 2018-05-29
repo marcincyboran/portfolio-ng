@@ -1,13 +1,13 @@
 <div class="cv-container">
-  <div class="cv-side-left">
-    <div class="img">
+  <div class="cv-side-left" #left [@slide-left]='stateLeftCol' (@slide-left.done)="columnsIn($event)">
+    <div class="img" [@slide-header-left]='stateLeft[0]'>
       <img src="./../../assets/shande.jpg" alt="my picture">
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-left]='stateLeft[0]'>
       <mat-icon>face</mat-icon>
       <h2>Personal information</h2>
     </div>
-    <div class="personal-body body">
+    <div class="personal-body body" [@slide-body-left]='stateLeft[0]'>
       <div>
         <i class="fas fa-home"></i>
         <p>ul. Tadeusza Zielińskiego 62/32</p>
@@ -27,12 +27,12 @@
         </p>
       </div>
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-left]='stateLeft[1]'>
       <mat-icon>assignment</mat-icon>
       <h2>Experience</h2>
     </div>
-    <div class="experience-body body">
-      <div>
+    <div class="experience-body body" >
+      <div [@slide-body-left]='stateLeft[1]'>
         <p>
           <em>12.2015 – 01.2017</em>
         </p>
@@ -42,7 +42,7 @@
         <p>Laborant</p>
         <p class="details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, temporibus!</p>
       </div>
-      <div>
+      <div [@slide-body-left]='stateLeft[1]'>
         <p>
           <em>01.2014 – obecnie</em>
         </p>
@@ -51,7 +51,7 @@
         </p>
         <p class="details">Sprzedaż detaliczna prowadzona przez domy sprzedaży wysyłkowej lub Internet</p>
       </div>
-      <div>
+      <div [@slide-body-left]='stateLeft[1]'>
         <p>
           <em>09.2012 – 10.2012</em>
         </p>
@@ -63,11 +63,11 @@
         </p>
       </div>
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-left]='stateLeft[2]'>
       <mat-icon>whatshot</mat-icon>
       <h2>Personality</h2>
     </div>
-    <div class="personality-body body">
+    <div class="personality-body body" [@slide-body-left]='stateLeft[2]'>
       <p>Otwarty</p>
       <p>Punktualny</p>
       <p>Dokładny</p>
@@ -75,11 +75,11 @@
       <p>Dobrze zorganizowany</p>
       <p>Elastyczny</p>
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-left]='stateLeft[3]'>
       <mat-icon>notifications</mat-icon>
       <h2>Po godzinach</h2>
     </div>
-    <div class="hobbies-body body">
+    <div class="hobbies-body body" [@slide-body-left]='stateLeft[3]'>
       <i class="fas fa-code"></i>
       <i class="fas fa-coffee"></i>
       <i class="fas fa-film"></i>
@@ -88,22 +88,22 @@
       <i class="fas fa-book"></i>
     </div>
   </div>
-  <div class="cv-side-right">
-    <div class="heading-name">
+  <div class="cv-side-right" #right [@slide-right]='stateRightCol' >
+    <div class="heading heading-name" [@slide-header-right]='stateRight[0]'>
       <h2>Marcin Cyboran</h2>
     </div>
-    <div class="heading-profile">
+    <div class="heading heading-profile" [@slide-header-right]='stateRight[0]'>
       <h2>Profil</h2>
     </div>
-    <div class="profile-body body">
+    <div class="profile-body body" [@slide-body-right]='stateRight[0]'>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur rerum architecto distinctio tempora, tempore deleniti
         dolore atque et tenetur excepturi!</p>
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-right]='stateRight[1]'>
       <mat-icon>school</mat-icon>
       <h2>Wykształcenie</h2>
     </div>
-    <div class="education-body body">
+    <div class="education-body body" [@slide-body-right]='stateRight[1]'>
       <div>
         <p>
           <em>10.2017 – 06.2018</em>
@@ -132,11 +132,11 @@
         <p>Biologia</p>
       </div>
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-right]='stateRight[2]'>
       <mat-icon>cloud_done</mat-icon>
       <h2>Umiejętności</h2>
     </div>
-    <div class="skills-body body">
+    <div class="skills-body body" [@slide-body-right]='stateRight[2]'>
       <p>Bardzo dobra znajomość i obsługa komputera</p>
       <p>Znajomość środowiska <strong>MS Office</strong></p>
       <p>Znajomość oprogramowania <strong>Adobe Photoshop</strong></p>
@@ -145,11 +145,11 @@
       <p>Podstawowa znajomość środowiska <strong>Linux</strong></p>
       <p>Prawo jazdy <strong>kat. B</strong></p>
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-right]='stateRight[3]'>
       <mat-icon>language</mat-icon>
       <h2>Języki obce</h2>
     </div>
-    <div class="languages-body body">
+    <div class="languages-body body" [@slide-body-right]='stateRight[3]'>
       <div>
         <p>Angielski</p>
         <i class="fas fa-circle"></i>
@@ -169,11 +169,11 @@
         <i class="fas fa-circle semi-transparent"></i>
       </div>
     </div>
-    <div class="heading">
+    <div class="heading" [@slide-header-right]='stateRight[4]'>
       <mat-icon>code</mat-icon>
       <h2>Software skills</h2>
     </div>
-    <div class="software-body body">
+    <div class="software-body body" [@slide-body-right]='stateRight[4]'>
       <div>
         <p>HTML 5</p>
         <i class="fas fa-circle"></i>

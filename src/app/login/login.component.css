@@ -1,12 +1,14 @@
 :host {
   color: #eee;
 }
+
 section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1 1 1px;
   height: 100%;
+  position: relative;
 }
 
 .example-form {
@@ -25,8 +27,7 @@ section {
 }
 
 .mat-raised-button {
-width: 100%;
-padding: 4px;
-
-margin-bottom: 20px;
+  width: 100%;
+  padding: 4px;
+  margin-bottom: 20px;
 }
