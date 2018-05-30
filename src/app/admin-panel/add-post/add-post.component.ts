@@ -32,7 +32,7 @@ export class AddPostComponent implements OnInit {
       text: logForm.value.text,
       text_short: textShort,
       img_url: logForm.value.img,
-      created: new Date().toLocaleDateString()
+      created: new Date().getTime().toString()
     };
 
     console.log(post);

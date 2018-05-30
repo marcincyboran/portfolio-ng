@@ -1,0 +1,120 @@
+:host {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.filters {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.filters button {
+  background-color: transparent;
+  position: relative;
+  color: white;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 1px;
+  transition: color 0.2s linear, transform 0.2s linear;
+}
+.filters button:hover {
+  cursor: pointer;
+  color: #F44336;
+}
+
+.filters button.activeFilter {
+  color: #F44336;
+  transform: scale(1.3);
+}
+
+.messages-container {
+  display: block;
+  min-height: 500px;
+  max-height: 80vh;
+  padding: 10px;
+  position: relative;
+  overflow: auto;
+}
+
+a:link,
+a:visited {
+  color: #F44336;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: white;
+}
+
+article {
+  border-left: 5px solid #F44336;
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+  padding: 1px;
+  position: relative;
+}
+
+.c-1of2 {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.c-1of2>.name {
+  flex: 1 1 100%;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.c-1of2>.email {
+  flex: 1 1 100%;
+  font-style: italic;
+}
+
+.box {
+  padding: 5px;
+  margin: 5px;
+}
+
+.loading,
+.loadingError {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+}
+
+.buttons mat-icon {
+  margin: 5px;
+  transform: scale(0.9);
+  transition: color .2s linear, transform .2s linear;
+}
+
+.buttons mat-icon:hover {
+  color: #F44336;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .c-1of2 {
+    flex-flow: row nowrap;
+  }
+  .c-1of2>.name {
+    flex: 1 1 50%;
+  }
+  .c-1of2>.email {
+    flex: 1 1 50%;
+  }
+}

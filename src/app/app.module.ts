@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -32,6 +32,11 @@ import { LogerDirective } from './_directives/loger.directive';
 import { AuthService } from './_services/auth.service';
 import { AuthGuardService } from './_services/auth-guard.service';
 import { HttpBlogService } from './_services/http-blog.service';
+import { MessagesComponent } from './admin-panel/messages/messages.component';
+import { HttpContactService } from './_services/http-contact.service';
+import { FilterMessagesPipe } from './_pipes/filter-messages.pipe';
+import { SortMessagesPipe } from './_pipes/sort-messages.pipe';
+import { SortPostsPipe } from './_pipes/sort-posts.pipe';
 
 const config = {
   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
@@ -59,7 +64,11 @@ const config = {
     LoggerComponent,
     PostComponent,
     PaginationComponent,
-    LogerDirective
+    MessagesComponent,
+    LogerDirective,
+    FilterMessagesPipe,
+    SortMessagesPipe,
+    SortPostsPipe
   ],
   imports: [
     BrowserModule,
@@ -71,12 +80,13 @@ const config = {
     AngularFireAuthModule,
     FormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4'
     // }),
   ],
-  providers: [AuthGuardService, AuthService, HttpBlogService],
+  providers: [AuthGuardService, AuthService, HttpBlogService, HttpContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

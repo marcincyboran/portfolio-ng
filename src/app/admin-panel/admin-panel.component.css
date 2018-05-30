@@ -1,48 +1,50 @@
-.myContainer {
+:host {}
+
+.admin-container {
   width: 100%;
   padding: 10px;
   /* background-color: orangered; */
 }
 
-.myContainer .myNav {
+.nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
 }
 
-.myContainer .myNav div {
+.nav div {
   flex: 0 1 120px;
   text-align: center;
   padding: 5px;
   margin: 0 5px;
-  background-color: #181818;
-  /* border: 1px solid #eee; */
+  background-color: #383838;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  transition: all .1s linear;
+  transition: background-color .2s linear;
 }
 
-.myContainer .myNav div:hover {
+.nav div:hover {
+  background-color: #181818;
+  cursor: pointer;
+}
+
+.nav .active {
   background-color: #181818;
 }
 
-.myContainer .myNav .navactive {
-  background-color: #383838;
-}
-
-.myContainer .myBody {
-  /* background-color: olive; */
+.body {
   margin-top: 40px;
 }
 
 @media screen and (min-width: 380px) {
-  .myContainer {
+  .admin-container {
     padding: 20px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .myContainer {
+  .admin-container {
+    padding: 20px;
     max-width: 1140px;
     margin: 0 auto;
   }

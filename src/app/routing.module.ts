@@ -17,11 +17,12 @@ import { LoggerComponent } from './admin-panel/logger/logger.component';
 import { PostComponent } from './blog/post/post.component';
 
 import { AuthGuardService } from './_services/auth-guard.service';
+import { MessagesComponent } from './admin-panel/messages/messages.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -41,7 +42,8 @@ const routes: Routes = [
   },
   {
     path: 'post/:id',
-    component: PostComponent
+    component: PostComponent,
+    data: { state: 'post' }
   },
   {
     path: 'cv',
@@ -80,6 +82,10 @@ const routes: Routes = [
         component: AddPostComponent
       },
       {
+        path: 'messages',
+        component: MessagesComponent
+      },
+      {
         path: 'logger',
         component: LoggerComponent
       }
@@ -92,7 +98,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class RoutingModule {}

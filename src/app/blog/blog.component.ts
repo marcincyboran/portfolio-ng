@@ -29,7 +29,17 @@ export class BlogComponent implements OnInit {
     this.http.getPosts().subscribe(
       data => {
         console.log('Blog ngOninit get post subscribe', data);
-        this.posts = data.reverse(); // First is newest in DB??
+
+        // I'm sorting it here because of posts[0] in template
+        this.posts = data.sort((a, b) => {
+          const aTime = parseInt(a.created, 10);
+          const bTime = parseInt(b.created, 10);
+          if (aTime < bTime) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
       },
       (error: HttpErrorResponse) => {
         console.log('Wild error appears', error);

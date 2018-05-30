@@ -18,10 +18,13 @@ h1,h2,h3, p {
   padding: 0;
 }
 
+button:focus {outline:0;}
+
 * {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
   line-height: 145%;
+  outline: none;
 }
 
 *::after {

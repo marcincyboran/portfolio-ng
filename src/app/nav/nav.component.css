@@ -4,7 +4,7 @@
   height: 100%;
 }
 
-div.phone {
+.phone {
   display: none;
 }
 
@@ -19,7 +19,6 @@ div.phone {
 .logo>img {
   max-width: 100%;
   border-radius: 50%;
-  /* border: 1px solid #eee; */
 }
 
 .navigation {
@@ -74,11 +73,21 @@ div.phone {
 }
 
 .navigation>div.logged {
-  color: #F44336
+  color: #F44336;
 }
 
 .navigation div.phone {
   display: none;
+}
+
+a:link,
+a:visited {
+  color: #eee;
+}
+
+a:hover,
+a:active {
+  color: #eee;
 }
 
 @media screen and (min-width: 768px) {

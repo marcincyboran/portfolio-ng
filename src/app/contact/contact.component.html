@@ -10,38 +10,36 @@
         ratione, repudiandae assumenda soluta dignissimos tempora illo distinctio cumque doloremque. Atque libero ducimus
         quam?
       </p>
-      <form class="contactForm" #contactForm="ngForm">
+      <form class="contactForm" [formGroup]="contactForm" (ngSubmit)="sendMessage()" #form="ngForm">
 
         <div class="formRow">
           <mat-form-field color="accent" appearance="outline">
             <mat-label>Your name</mat-label>
-            <input ngModel matInput placeholder="" maxlength="20" type="text" name="name" required>
-            <!-- <mat-error *ngIf="">error</mat-error> -->
+            <input matInput maxlength="50" type="text" formControlName="name" >
+            <mat-error *ngIf="contactForm.get('name').errors">error</mat-error>
           </mat-form-field>
 
           <mat-form-field color="accent" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input ngModel matInput placeholder="" maxlength="20" type="email" name="email" required>
+            <input matInput maxlength="50" type="email" formControlName="email" >
             <!-- <mat-error *ngIf="">error</mat-error> -->
           </mat-form-field>
         </div>
 
         <mat-form-field color="accent" appearance="outline">
           <mat-label>Subject</mat-label>
-          <input ngModel matInput placeholder="" maxlength="20" type="subject" name="subject" required>
+          <input matInput maxlength="50" type="subject" formControlName="subject" >
           <!-- <mat-error *ngIf="">error</mat-error> -->
         </mat-form-field>
 
         <mat-form-field color="accent" appearance="outline">
           <mat-label>Message...</mat-label>
-          <textarea rows="4" ngModel matInput placeholder="" maxlength="20" type="message" name="message" required>
+          <textarea matInput maxlength="500" type="message" formControlName="message" rows="4" >
           </textarea>
           <!-- <mat-error *ngIf="">error</mat-error> -->
         </mat-form-field>
 
-        <button mat-raised-button type="submit" color="warn" [disabled]="">Ask</button>
-
-
+        <button mat-raised-button type="submit" color="warn" [disabled]="contactForm.invalid || contactForm.pristine">Ask</button>
       </form>
     </div>
 

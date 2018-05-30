@@ -15,8 +15,7 @@ export class HttpBlogService {
   );
 
   constructor(private http: HttpClient) {
-    console.log('Http service constructor');
-    // this.getPosts();
+    console.log('Http-blog service constructor');
   }
 
   getPosts(): Observable<Array<Post>> {

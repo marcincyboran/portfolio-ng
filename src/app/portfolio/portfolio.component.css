@@ -1,3 +1,28 @@
 :host {
-  color: white;
+  display: block;
+  height: 100vh;
+  overflow: auto;
+  background-image: url('./../../assets/progress.png');
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+
+/* .portfolio-container {
+  width: 100%;
+  padding: 10px;
+  background-color: #eee;
+  margin-top: 64px;
+  min-height: 700px;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-container {
+    max-width: 1140px;
+    margin: 60px auto;
+    flex-flow: row nowrap;
+  }
+} */

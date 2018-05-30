@@ -8,7 +8,7 @@
     </div>
     <div class="current-post-body">
       <h1 class="current-post-body-header">{{posts[0].title | uppercase}}</h1>
-      <p class="current-post-body-date">{{posts[0].created}}</p>
+      <p class="current-post-body-date">{{posts[0].created | date}}</p>
       <p class="current-post-body-text">{{posts[0].text_short}}</p>
       <button appLoger mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(posts[0])">Read more...</button>
     </div>
@@ -21,7 +21,7 @@
       </div>
       <div class="other-post-body">
         <h2 class="other-post-body-header">{{post.title | uppercase}}</h2>
-        <p class="other-post-body-date">{{post.created}}</p>
+        <p class="other-post-body-date">{{post.created | date}}</p>
         <p class="other-post-body-text">{{post.text_short || post.text}}</p>
         <button appLoger mat-raised-button color="warn" class="other-post-body-button" (click)="showPost(post)">Read more...</button>
       </div>

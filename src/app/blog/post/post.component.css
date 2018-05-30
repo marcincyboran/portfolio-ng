@@ -1,6 +1,4 @@
 :host {
-  display: block;
-  padding: 50px;
 }
 
 .loading, .loadingError {
@@ -8,6 +6,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+
+.post-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
@@ -26,4 +30,29 @@ p.date {
 p.text {
   text-indent: 20px;
   text-align: justify;
+}
+
+p.back {
+  margin-top: 60px;
+  text-align: center;
+}
+
+p.back span {
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #181818;
+  transition: background-color .2s linear;
+}
+
+p.back span:hover {
+  background-color: #F44336;
+}
+
+
+@media screen and (min-width: 768px) {
+  .post-container {
+    padding: 40px;
+  }
 }
