@@ -1,0 +1,99 @@
+<section class="portfolio-container">
+  <h1>Portfolio</h1>
+  <div class="header">
+    <button class="filter-btn" data-filter="all">all</button>
+    <button class="filter-btn" data-filter=".bootstrap" (click)="bootstrap()">bootstrap</button>
+    <button class="filter-btn" data-filter=".vanillajs">vanillajs</button>
+    <button class="filter-btn" data-filter=".angular">angular</button>
+    <button class="filter-btn" data-filter=".angularjs">angularjs</button>
+    <button class="filter-btn" data-filter=".react">react</button>
+    <button class="filter-btn" data-filter=".wordpress">wordpress</button>
+
+    <button class="sort-btn" data-sort="year:desc">Newest <i class="fas fa-sort-numeric-down"></i></button>
+  </div>
+  <div class="body">
+    <ul class="courses" id="mixitup-wrapper" #test>
+
+      <li class="mixitup-target bootstrap" data-year="2017">
+        <a href="#">
+          <img src="./../../assets/projekt 1.jpg" alt="no image image">
+        </a>
+        <h2>
+          WSB - projket-1
+        </h2>
+      </li>
+
+      <li class="mixitup-target vanillajs" data-year="2018">
+        <a href="https://marcincyboran.github.io/todo-vanillajs/">
+          <img src="./../../assets/todo netins.jpg" alt="no image image">
+        </a>
+        <h2>
+          vanillajs todo
+        </h2>
+      </li>
+
+      <li class="mixitup-target angular" data-year="2010">
+        <a href="#">
+          <img src="./../../assets/no-img.jpg" alt="no image image">
+        </a>
+        <h2>
+          html css bootstrap
+        </h2>
+      </li>
+
+      <li class="mixitup-target angular" data-year="2012">
+        <a href="#">
+          <img src="./../../assets/no-img.jpg" alt="no image image">
+        </a>
+        <h2>
+          html css bootstrap vanillajs
+        </h2>
+      </li>
+
+      <li class="mixitup-target angularjs" data-year="2005">
+        <a href="#">
+          <img src="./../../assets/no-img.jpg" alt="no image image">
+        </a>
+        <h2>
+          example
+        </h2>
+      </li>
+
+      <li class="mixitup-target react" data-year="2018">
+        <a href="#">
+          <img src="./../../assets/no-img.jpg" alt="no image image">
+        </a>
+        <h2>
+          example
+        </h2>
+      </li>
+
+      <li class="mixitup-target bootstrap" data-year="2018">
+        <a href="#">
+          <img src="./../../assets/no-img.jpg" alt="no image image">
+        </a>
+        <h2>
+          example
+        </h2>
+      </li>
+
+      <li class="mixitup-target angular bootstrap" data-year="2018">
+        <a href="#">
+          <img src="./../../assets/no-img.jpg" alt="no image image">
+        </a>
+        <h2>
+          example
+        </h2>
+      </li>
+
+      <li class="mixitup-target wordpress" data-year="2018">
+        <a href="#">
+          <img src="./../../assets/no-img.jpg" alt="no image image">
+        </a>
+        <h2>
+          example
+        </h2>
+      </li>
+    </ul>
+  </div>
+</section>

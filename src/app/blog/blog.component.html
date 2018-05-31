@@ -1,5 +1,5 @@
 <img class="loading" *ngIf="isLoading" src="./../../assets/loading.svg" alt="loading gif">
-<h1 class="loadingError" *ngIf="loadingError">Something went wrong duhh : (</h1>
+<h1 class="loadingError" *ngIf="loadingError">Something went wrong : (</h1>
 
 <div class="blog-container" *ngIf="!isLoading && !loadingError">
   <h1>Blog</h1>
@@ -14,6 +14,8 @@
     </div>
     <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(posts[0])">delete_forever</mat-icon>
   </div>
+
+  <!-- In a future change it from flex to inline, or fix flex bc when 2 of 3 posts on page the gap looks ugly as hell -->
 
   <div class="others">
     <div class="other-post" *ngFor="let post of posts | slice:page*itemsOnPage-itemsOnPage+1:page*itemsOnPage+1">

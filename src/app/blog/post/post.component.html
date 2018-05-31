@@ -3,10 +3,9 @@
 
 <section class="post-container" *ngIf="post">
   <h1>{{post.title}}</h1>
-  <p class="date">{{post.created}}</p>
+  <p class="date">{{post.created | date}}</p>
   <p class="text">{{post.text}}</p>
   <p class="back">
     <span routerLink="/blog">GO BACK</span>
   </p>
-
 </section>
