@@ -75,7 +75,7 @@ ul>li h2 {
   background-color: rgba(0, 0, 0, .7);
   width: 100%;
   text-align: center;
-  /* padding: 5px; */
+  padding: 5px;
   letter-spacing: 1px;
   transform: scale(1);
   opacity: 0;
