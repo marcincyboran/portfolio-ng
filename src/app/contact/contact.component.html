@@ -16,7 +16,7 @@
             <mat-label>Imię</mat-label>
             <input matInput maxlength="50" type="text" formControlName="name">
             <mat-hint align="end">{{ contactForm.value.name ? contactForm.value.name.length : 0 }} / 50</mat-hint>
-            <mat-error *ngIf="contactForm.get('name').errors['required']">Pole wymagane</mat-error>
+            <mat-error *ngIf="contactForm.get('name').errors">Pole wymagane</mat-error>
 
           </mat-form-field>
 
@@ -24,7 +24,7 @@
             <mat-label>E-mail</mat-label>
             <input matInput maxlength="50" type="email" formControlName="email">
             <mat-hint align="end">{{ contactForm.value.email ? contactForm.value.email.length : 0 }} / 50</mat-hint>
-            <mat-error *ngIf="contactForm.get('email').errors['required']">Pole wymagane</mat-error>
+            <mat-error *ngIf="contactForm.get('email').errors">Pole wymagane</mat-error>
           </mat-form-field>
         </div>
 
@@ -32,7 +32,7 @@
           <mat-label>Temat</mat-label>
           <input matInput maxlength="50" type="subject" formControlName="subject">
           <mat-hint align="end">{{ contactForm.value.subject ? contactForm.value.subject.length : 0 }} / 50</mat-hint>
-          <mat-error *ngIf="contactForm.get('subject').errors['required']">Pole wymagane</mat-error>
+          <mat-error *ngIf="contactForm.get('subject').errors">Pole wymagane</mat-error>
         </mat-form-field>
 
         <mat-form-field color="accent" appearance="outline">
@@ -40,7 +40,7 @@
           <textarea matInput maxlength="500" type="message" formControlName="message" rows="4">
           </textarea>
           <mat-hint align="end">{{ contactForm.value.message ? contactForm.value.message.length : 0 }} / 500</mat-hint>
-          <mat-error *ngIf="contactForm.get('message').errors['required']">Pole wymagane</mat-error>
+          <mat-error *ngIf="contactForm.get('message').errors">Pole wymagane</mat-error>
         </mat-form-field>
 
         <button mat-raised-button type="submit" color="warn" [disabled]="contactForm.invalid || contactForm.pristine">Ask</button>
