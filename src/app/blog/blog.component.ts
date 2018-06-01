@@ -28,7 +28,7 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.http.getPosts().subscribe(
       data => {
-        console.log('Blog ngOninit get post subscribe', data);
+        // console.log('Blog ngOninit get post subscribe', data);
 
         // I'm sorting it here because of posts[0] in template
         this.posts = data.sort((a, b) => {
@@ -42,12 +42,12 @@ export class BlogComponent implements OnInit {
         });
       },
       (error: HttpErrorResponse) => {
-        console.log('Wild error appears', error);
+        console.error('Wild error appears', error);
         this.loadingError = true;
         this.isLoading = false;
       },
       () => {
-        console.log('completed');
+        // console.log('completed');
         this.isLoading = false;
       }
     );

@@ -15,7 +15,7 @@ export class HttpContactService {
   );
 
   constructor(private http: HttpClient) {
-    console.log('Http-contact service constructor');
+    // console.log('Http-contact service constructor');
   }
 
   getMessages(): Observable<Array<Message>> {
@@ -24,21 +24,21 @@ export class HttpContactService {
 
   sendMessage(message: Message): void {
     this.http.post<Message>(this.URL_DB, message, { params: this.param }).subscribe(data => {
-      console.log('Message sent: ', data);
+      console.log('Wiadomość wysłana: ', data);
     });
   }
 
   updateMessage(message: Message): void {
     const id = message._id.$oid;
     this.http.put<Message>(this.URL_DB + '/' + id, message, { params: this.param }).subscribe(data => {
-      console.log('Message update: ', data);
+      console.log('Wiadomość zaktualizowana: ', data);
     });
   }
 
   deleteMessage(message: Message): void {
     const id = message._id.$oid;
-    this.http.delete(this.URL_DB + '/' + id, { params: this.param }).subscribe(data => {
-      console.log('Message deleted: ', data);
+    this.http.delete<Message>(this.URL_DB + '/' + id, { params: this.param }).subscribe(data => {
+      console.log('Wiadomość skasowana: ', data);
     });
   }
 }

@@ -5,17 +5,11 @@ import { Message } from '../interfaces/message';
   name: 'sortMessages'
 })
 export class SortMessagesPipe implements PipeTransform {
-
   transform(value: Array<Message>, args: string): Array<Message> {
-   return value = value.sort((a, b) => {
+    return (value = value.sort((a, b) => {
       const aTime = parseInt(a.created, 10);
       const bTime = parseInt(b.created, 10);
-      if (aTime < bTime) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
+      return aTime < bTime ? 1 : -1;
+    }));
   }
-
 }

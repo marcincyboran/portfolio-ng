@@ -12,10 +12,11 @@ export class AuthService {
   admin: User;
 
   constructor(private firebase: AngularFireAuth, private router: Router) {
-    console.log('Auth service');
     firebase.authState.subscribe(user => {
       this.user = user;
-      (user && user.email === 'admin@example.com') ? this.admin = user : this.admin = null;
+
+      // Future feature - change this line because it's readable for all; for example make special prop in db that says user is admin
+      user && user.email === 'admin@example.com' ? (this.admin = user) : (this.admin = null);
       // console.log('authState.subscribe---------', this.user);
     });
   }
@@ -25,11 +26,10 @@ export class AuthService {
     this.firebase.auth
       .signInWithEmailAndPassword(email, pass)
       .then(data => {
-        console.log(data);
         this.goHome();
       })
       .catch(err => {
-        console.log(err);
+        console.error(err);
       });
   }
 
@@ -38,11 +38,10 @@ export class AuthService {
     this.firebase.auth
       .createUserWithEmailAndPassword(email, pass)
       .then(data => {
-        console.log(data);
         this.goHome();
       })
       .catch(err => {
-        console.log(err);
+        console.error(err);
       });
   }
 

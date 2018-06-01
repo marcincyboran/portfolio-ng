@@ -16,3 +16,5 @@ export class LogerDirective implements OnInit {
     console.log(header.innerHTML);
   }
 }
+
+// Im not using it yet

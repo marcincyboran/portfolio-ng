@@ -35,9 +35,11 @@
 
 #formWrapper>h1 {
   font-size: 2em;
-  font-family: 'Roboto', sans-serif;
   font-style: italic;
-  font-weight: bold;
+  font-weight: 300;
+}
+#formWrapper>p {
+  font-weight: 300;
 }
 
 #formWrapper>h1:before,
@@ -86,6 +88,7 @@ form button {
   flex-flow: column nowrap;
   width: 100%;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 #map {

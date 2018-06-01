@@ -36,7 +36,6 @@ import { MessagesComponent } from './admin-panel/messages/messages.component';
 import { HttpContactService } from './_services/http-contact.service';
 import { FilterMessagesPipe } from './_pipes/filter-messages.pipe';
 import { SortMessagesPipe } from './_pipes/sort-messages.pipe';
-import { SortPostsPipe } from './_pipes/sort-posts.pipe';
 
 const config = {
   apiKey: 'AIzaSyAn_qR1aVixNKss_DPUK8xG7nIMQreyRH4',
@@ -67,8 +66,7 @@ const config = {
     MessagesComponent,
     LogerDirective,
     FilterMessagesPipe,
-    SortMessagesPipe,
-    SortPostsPipe
+    SortMessagesPipe
   ],
   imports: [
     BrowserModule,

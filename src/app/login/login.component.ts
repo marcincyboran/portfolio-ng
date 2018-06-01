@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
     Validators.email,
   ]);
 
-
   constructor(private auth: AuthService) {}
 
   ngOnInit() {}

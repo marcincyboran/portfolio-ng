@@ -3,30 +3,29 @@
   <button (click)="show('all')" [ngClass]="{'activeFilter': filter === 'all'}">all</button>
   <button (click)="show('new')" [ngClass]="{'activeFilter': filter === 'new'}">new</button>
 </div>
-<div class="messages-container">
-  <img class="loading" *ngIf="isLoading" src="./../../assets/loading.svg" alt="loading gif">
-  <h1 class="loadingError" *ngIf="loadingError">Something went wrong duhh : (</h1>
-  <section *ngIf="!isLoading && !loadingError">
-    <article *ngFor="let message of messages | filterMessages: filter | sortMessages">
-      <div class="c-1of2 ">
-        <div class="name box">
-          {{message.name}}
+<section class="messages-container">
+    <img class="loading" *ngIf="isLoading" src="./../../assets/loading.svg" alt="loading gif">
+    <h1 class="loadingError" *ngIf="loadingError">Something went wrong duhh : (</h1>
+    <section *ngIf="!isLoading && !loadingError">
+      <article *ngFor="let message of messages | filterMessages: filter | sortMessages">
+        <div class="c-1of2 ">
+          <div class="name box">
+            {{message.name}}
+          </div>
+          <div class="email box">
+            <a href="mailto:{{message.email}}">{{message.email}}</a>
+          </div>
         </div>
-        <div class="email box">
-          <a href="mailto:{{message.email}}">{{message.email}}</a>
+        <div class="subject box">
+          {{message.subject}}
         </div>
-      </div>
-      <div class="subject box">
-        {{message.subject}}
-      </div>
-      <div class="message box">
-        {{message.message}}
-      </div>
-      <div class="buttons">
-        <mat-icon class="delete" (click)="readMessage(message)">drafts</mat-icon>
-        <mat-icon class="delete" (click)="deleteMessage(message)">delete</mat-icon>
-      </div>
-    </article>
-  </section>
-
-</div>
+        <div class="message box">
+          {{message.message}}
+        </div>
+        <div class="buttons">
+          <mat-icon class="delete" (click)="readMessage(message)">drafts</mat-icon>
+          <mat-icon class="delete" (click)="deleteMessage(message)">delete</mat-icon>
+        </div>
+      </article>
+    </section>
+</section>

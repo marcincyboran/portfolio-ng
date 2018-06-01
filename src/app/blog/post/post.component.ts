@@ -19,16 +19,16 @@ export class PostComponent implements OnInit {
     const postId = this.route.snapshot.paramMap.get('id');
     this.http.getPost(postId).subscribe(
       data => {
-        console.log('Post ngOninit get post subscribe', data);
+        // console.log('Post ngOninit get post subscribe', data);
         this.post = data;
       },
       (error: HttpErrorResponse) => {
-        console.log('Wild error appears', error);
+        console.error('Wild error appears', error);
         this.loadingError = true;
         this.isLoading = false;
       },
       () => {
-        console.log('completed');
+        // console.log('completed');
         this.isLoading = false;
       }
     );

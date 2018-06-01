@@ -1,3 +1,5 @@
+/* Future feature - hide scrollbar in FF using parent overflow hidden and element margin -16px */
+
 :host {
   display: block;
   background-color: rgba(0, 0, 0, 0.4);
@@ -31,7 +33,6 @@
 }
 
 .messages-container {
-  display: block;
   min-height: 500px;
   max-height: 80vh;
   padding: 10px;

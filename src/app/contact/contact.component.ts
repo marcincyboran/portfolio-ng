@@ -45,7 +45,7 @@ export class ContactComponent implements OnInit {
       ])
     });
     console.log(this.contactForm);
-
+    console.log(this.contactForm.controls.email);
   }
 
   sendMessage() {

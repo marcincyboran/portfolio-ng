@@ -1,11 +1,14 @@
-<div class="cv-container">
+<section class="cv-container">
+
   <div class="cv-side-left" #left [@slide-left]='stateLeftCol' (@slide-left.done)="columnsIn($event)">
+
     <div class="img" [@slide-header-left]='stateLeft[0]'>
-      <img src="./../../assets/shande.jpg" alt="my picture">
+      <img src="./../../assets/wolf-icon.png" alt="my picture">
     </div>
+
     <div class="heading" [@slide-header-left]='stateLeft[0]'>
       <mat-icon>face</mat-icon>
-      <h2>Personal information</h2>
+      <h2>Informacje personalne</h2>
     </div>
     <div class="personal-body body" [@slide-body-left]='stateLeft[0]'>
       <div>
@@ -27,11 +30,12 @@
         </p>
       </div>
     </div>
+
     <div class="heading" [@slide-header-left]='stateLeft[1]'>
       <mat-icon>assignment</mat-icon>
-      <h2>Experience</h2>
+      <h2>Doświadczenie</h2>
     </div>
-    <div class="experience-body body" >
+    <div class="experience-body body">
       <div [@slide-body-left]='stateLeft[1]'>
         <p>
           <em>12.2015 – 01.2017</em>
@@ -63,9 +67,10 @@
         </p>
       </div>
     </div>
+
     <div class="heading" [@slide-header-left]='stateLeft[2]'>
       <mat-icon>whatshot</mat-icon>
-      <h2>Personality</h2>
+      <h2>Osobowość</h2>
     </div>
     <div class="personality-body body" [@slide-body-left]='stateLeft[2]'>
       <p>Otwarty</p>
@@ -75,6 +80,7 @@
       <p>Zorganizowany</p>
       <p>Ugodowy</p>
     </div>
+
     <div class="heading" [@slide-header-left]='stateLeft[3]'>
       <mat-icon>notifications</mat-icon>
       <h2>Po godzinach</h2>
@@ -88,17 +94,21 @@
       <i class="fas fa-book"></i>
     </div>
   </div>
-  <div class="cv-side-right" #right [@slide-right]='stateRightCol' >
+
+  <div class="cv-side-right" #right [@slide-right]='stateRightCol'>
+
     <div class="heading heading-name" [@slide-header-right]='stateRight[0]'>
       <h2>Marcin Cyboran</h2>
     </div>
+
     <div class="heading heading-profile" [@slide-header-right]='stateRight[0]'>
       <h2>Profil</h2>
     </div>
     <div class="profile-body body" [@slide-body-right]='stateRight[0]'>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur rerum architecto distinctio tempora, tempore deleniti
-        dolore atque et tenetur excepturi!</p>
+      <p>Samouk, który wszystko musi sprawdzić sam. Aktualnie aspiruje na Junior Front-End Developera || Junior Angular-Developer,
+         nie potrafię jeszcze wielu rzeczy, natomiast bardzo szybko się uczę, a daną mi szansę wykorzystam na 100%</p>
     </div>
+
     <div class="heading" [@slide-header-right]='stateRight[1]'>
       <mat-icon>school</mat-icon>
       <h2>Wykształcenie</h2>
@@ -111,7 +121,9 @@
         <p>
           <strong>Wyższa Szkoła Bankowa we Wrocławiu</strong>
         </p>
-        <p>Programista front-end z AngularJS <a href="www.wsb.pl/wroclaw/studenci/studia-podyplomowe/kierunki/programista-front-end-z-angular-js">- program kierunku</a></p>
+        <p>Programista front-end z AngularJS -
+          <a href="www.wsb.pl/wroclaw/studenci/studia-podyplomowe/kierunki/programista-front-end-z-angular-js">program kierunku</a>
+        </p>
       </div>
       <div>
         <p>
@@ -132,19 +144,32 @@
         <p>Biologia</p>
       </div>
     </div>
+
     <div class="heading" [@slide-header-right]='stateRight[2]'>
       <mat-icon>cloud_done</mat-icon>
       <h2>Umiejętności</h2>
     </div>
     <div class="skills-body body" [@slide-body-right]='stateRight[2]'>
       <p>Bardzo dobra znajomość i obsługa komputera</p>
-      <p>Znajomość środowiska <strong>MS Office</strong></p>
-      <p>Znajomość oprogramowania <strong>Adobe Photoshop</strong></p>
-      <p>Znajomość oprogramowania <strong>Sklepicom</strong> od nazwa.pl</p>
-      <p>Doświadczenie w pracy normą <strong>ISO 9001:2008</strong></p>
-      <p>Podstawowa znajomość środowiska <strong>Linux</strong></p>
-      <p>Prawo jazdy <strong>kat. B</strong></p>
+      <p>Znajomość środowiska
+        <strong>MS Office</strong>
+      </p>
+      <p>Znajomość oprogramowania
+        <strong>Adobe Photoshop</strong>
+      </p>
+      <p>Znajomość oprogramowania
+        <strong>Sklepicom</strong> od nazwa.pl</p>
+      <p>Doświadczenie w pracy normą
+        <strong>ISO 9001:2008</strong>
+      </p>
+      <p>Podstawowa znajomość środowiska
+        <strong>Linux</strong>
+      </p>
+      <p>Prawo jazdy
+        <strong>kat. B</strong>
+      </p>
     </div>
+
     <div class="heading" [@slide-header-right]='stateRight[3]'>
       <mat-icon>language</mat-icon>
       <h2>Języki obce</h2>
@@ -169,9 +194,10 @@
         <i class="fas fa-circle semi-transparent"></i>
       </div>
     </div>
+
     <div class="heading" [@slide-header-right]='stateRight[4]'>
       <mat-icon>code</mat-icon>
-      <h2>Software skills</h2>
+      <h2>Technologie webowe</h2>
     </div>
     <div class="software-body body" [@slide-body-right]='stateRight[4]'>
       <div>
@@ -275,3 +301,5 @@
       </div>
     </div>
   </div>
+
+</section>

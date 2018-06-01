@@ -15,7 +15,7 @@ export class HttpBlogService {
   );
 
   constructor(private http: HttpClient) {
-    console.log('Http-blog service constructor');
+    // console.log('Http-blog service constructor');
   }
 
   getPosts(): Observable<Array<Post>> {
@@ -34,9 +34,8 @@ export class HttpBlogService {
 
   deletePost(post: Post): void {
     const id = post._id.$oid;
-
-    this.http.delete(this.URL_DB + '/' + id, { params: this.param }).subscribe(data => {
-      console.log('Deleted post: ', data);
+    this.http.delete<Post>(this.URL_DB + '/' + id, { params: this.param }).subscribe(data => {
+      console.log('Skasowano post: ', data);
     });
   }
 }

@@ -1,23 +1,23 @@
 <img class="loading" *ngIf="isLoading" src="./../../assets/loading.svg" alt="loading gif">
 <h1 class="loadingError" *ngIf="loadingError">Something went wrong : (</h1>
 
-<div class="blog-container" *ngIf="!isLoading && !loadingError">
+<section class="blog-container" *ngIf="!isLoading && !loadingError">
   <h1>Blog</h1>
-  <div class="current-post">
+  <article class="current-post">
     <div class="current-post-img" [ngStyle]="{'background-image': 'url(' + posts[0].img_url + ')' }">
     </div>
     <div class="current-post-body">
       <h1 class="current-post-body-header">{{posts[0].title | uppercase}}</h1>
       <p class="current-post-body-date">{{posts[0].created | date}}</p>
       <p class="current-post-body-text">{{posts[0].text_short}}</p>
-      <button appLoger mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(posts[0])">Read more...</button>
+      <button appLoger mat-raised-button color="warn" class="current-post-body-button" (click)="showPost(posts[0])">Więcej...</button>
     </div>
     <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(posts[0])">delete_forever</mat-icon>
-  </div>
+  </article>
 
   <!-- In a future change it from flex to inline, or fix flex bc when 2 of 3 posts on page the gap looks ugly as hell -->
 
-  <div class="others">
+  <article class="others">
     <div class="other-post" *ngFor="let post of posts | slice:page*itemsOnPage-itemsOnPage+1:page*itemsOnPage+1">
       <div class="other-post-img" [ngStyle]="{'background-image': 'url(' + post.img_url + ')' }">
       </div>
@@ -25,10 +25,10 @@
         <h2 class="other-post-body-header">{{post.title | uppercase}}</h2>
         <p class="other-post-body-date">{{post.created | date}}</p>
         <p class="other-post-body-text">{{post.text_short || post.text}}</p>
-        <button appLoger mat-raised-button color="warn" class="other-post-body-button" (click)="showPost(post)">Read more...</button>
+        <button appLoger mat-raised-button color="warn" class="other-post-body-button" (click)="showPost(post)">Więcej...</button>
       </div>
       <mat-icon class="delete" *ngIf="auth.admin" (click)="deletePost(post)">delete_forever</mat-icon>
     </div>
-  </div>
+  </article>
   <app-pagination [allPosts]="posts" [itemsOnPage]="itemsOnPage" (eventPage)="currentPage($event)" *ngIf="posts.length > itemsOnPage"></app-pagination>
-</div>
+</section>
