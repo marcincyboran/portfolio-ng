@@ -11,24 +11,18 @@ import { PortfolioModule } from './portfolio/portfolio.module';
 import { SkillsModule } from './skills/skills.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [
-    AdminPanelModule,
-    BlogModule,
-    ContactModule,
-    CvModule,
     HomeModule,
-    LoginModule,
     PortfolioModule,
     SkillsModule,
+    BlogModule,
+    CvModule,
+    ContactModule,
+    LoginModule,
+    AdminPanelModule,
     PageNotFoundModule,
     RouterModule.forRoot(routes)
   ],
