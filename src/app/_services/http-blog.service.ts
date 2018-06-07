@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post } from '../interfaces/post';
+import { Post } from '../_interfaces/post';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,7 @@ export class HttpBlogService {
     'nZ4X3O7K8gYk47-neLjlvUwF4W56ReLg'
   );
 
-  constructor(private http: HttpClient) {
-    // console.log('Http-blog service constructor');
-  }
+  constructor(private http: HttpClient) {}
 
   getPosts(): Observable<Array<Post>> {
     return this.http.get<Array<Post>>(this.URL_DB, { params: this.param });
@@ -27,15 +25,11 @@ export class HttpBlogService {
   }
 
   sendPost(post: Post): void {
-    this.http.post<Post>(this.URL_DB, post, { params: this.param }).subscribe(data => {
-      console.log('Wysłano post: ', data);
-    });
+    this.http.post<Post>(this.URL_DB, post, { params: this.param }).subscribe(data => {});
   }
 
   deletePost(post: Post): void {
     const id = post._id.$oid;
-    this.http.delete<Post>(this.URL_DB + '/' + id, { params: this.param }).subscribe(data => {
-      console.log('Skasowano post: ', data);
-    });
+    this.http.delete<Post>(this.URL_DB + '/' + id, { params: this.param }).subscribe(data => {});
   }
 }

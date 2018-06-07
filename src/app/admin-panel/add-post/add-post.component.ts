@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Post } from '../../interfaces/post';
+import { Post } from '../../_interfaces/post';
 import { HttpBlogService } from '../../_services/http-blog.service';
 
 @Component({
@@ -26,7 +26,6 @@ export class AddPostComponent implements OnInit {
       created: new Date().getTime().toString()
     };
 
-    console.log(post);
     this.http.sendPost(post);
     logForm.resetForm();
   }

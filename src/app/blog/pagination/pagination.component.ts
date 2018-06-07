@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Post } from '../../interfaces/post';
+import { Post } from '../../_interfaces/post';
 
 @Component({
   selector: 'app-pagination',

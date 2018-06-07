@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpContactService } from '../../_services/http-contact.service';
-import { Message } from '../../interfaces/message';
+import { Message } from '../../_interfaces/message';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -19,7 +19,6 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     this.http.getMessages().subscribe(
       data => {
-        // console.log('Messages ngOninit get messages subscribe', data);
         this.messages = data;
       },
       (error: HttpErrorResponse) => {
@@ -28,7 +27,6 @@ export class MessagesComponent implements OnInit {
         this.isLoading = false;
       },
       () => {
-        // console.log('completed');
         this.isLoading = false;
       }
     );

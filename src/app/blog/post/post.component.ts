@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Post } from '../../interfaces/post';
+import { Post } from '../../_interfaces/post';
 import { HttpErrorResponse } from '@angular/common/http';
 import { HttpBlogService } from '../../_services/http-blog.service';
 
@@ -19,7 +19,6 @@ export class PostComponent implements OnInit {
     const postId = this.route.snapshot.paramMap.get('id');
     this.http.getPost(postId).subscribe(
       data => {
-        // console.log('Post ngOninit get post subscribe', data);
         this.post = data;
       },
       (error: HttpErrorResponse) => {
@@ -28,7 +27,6 @@ export class PostComponent implements OnInit {
         this.isLoading = false;
       },
       () => {
-        // console.log('completed');
         this.isLoading = false;
       }
     );

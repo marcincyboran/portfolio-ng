@@ -5,57 +5,47 @@
   </div>
 
   <div class="navigation hidden" #menu>
-
     <div routerLink="/home" data-name="HOME" routerLinkActive="navactive">
       <mat-icon>supervised_user_circle</mat-icon>
     </div>
-
     <div routerLink="/portfolio" data-name="WORKS" routerLinkActive="navactive">
       <mat-icon class="material-icons md-36">web</mat-icon>
     </div>
-
     <div routerLink="/skills" data-name="SKILLS" routerLinkActive="navactive">
       <mat-icon>settings</mat-icon>
     </div>
-
     <div routerLink="/blog" data-name="BLOG" routerLinkActive="navactive">
       <mat-icon>chrome_reader_mode</mat-icon>
     </div>
-
     <div routerLink="/cv" data-name="CV" routerLinkActive="navactive">
       <mat-icon>fingerprint</mat-icon>
     </div>
-
     <div routerLink="/contact" data-name="CONTACT" routerLinkActive="navactive">
       <mat-icon>mail_outline</mat-icon>
     </div>
-
     <div data-name="PANEL" *ngIf="auth.user" routerLink="/admin" routerLinkActive="navactive" class="logged">
       <mat-icon>edit</mat-icon>
     </div>
-
     <div data-name="LOGOUT" *ngIf="auth.user" (click)="logout()" class="logged">
       <mat-icon>exit_to_app</mat-icon>
     </div>
-
   </div>
 
   <div class="social">
-
     <div>
       <a href="https://github.com/marcincyboran" target="_blank">
         <i class="fab fa-github"></i>
       </a>
     </div>
-
     <div>
       <a href="https://www.facebook.com/marcin.cyboran" target="_blank">
         <i class="fab fa-facebook-square"></i>
       </a>
     </div>
-
   </div>
+
   <div class="phone" (click)="showMenuPhone(menu)">
     <mat-icon>menu</mat-icon>
   </div>
+
 </section>

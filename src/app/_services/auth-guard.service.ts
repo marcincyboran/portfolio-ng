@@ -14,7 +14,6 @@ export class AuthGuardService implements CanActivate {
     // Future feature - change this line because it's readable for all; for example make special prop in db that says user is admin
     if (this.auth.user && this.auth.user.email === 'admin@example.com') {
       return true;
-      // console.log('authGuard --- true', this.auth.user);
     }
     this.router.navigate(['/home']);
     return false;

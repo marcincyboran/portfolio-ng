@@ -17,12 +17,10 @@ export class AuthService {
 
       // Future feature - change this line because it's readable for all; for example make special prop in db that says user is admin
       user && user.email === 'admin@example.com' ? (this.admin = user) : (this.admin = null);
-      // console.log('authState.subscribe---------', this.user);
     });
   }
 
   login(email: string, pass: string): void {
-    console.log('---login---');
     this.firebase.auth
       .signInWithEmailAndPassword(email, pass)
       .then(data => {
@@ -34,7 +32,6 @@ export class AuthService {
   }
 
   register(email: string, pass: string): void {
-    console.log('---reg---');
     this.firebase.auth
       .createUserWithEmailAndPassword(email, pass)
       .then(data => {
@@ -46,7 +43,6 @@ export class AuthService {
   }
 
   logout(): void {
-    console.log('---logout---');
     this.firebase.auth.signOut();
     this.goHome();
   }

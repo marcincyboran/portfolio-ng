@@ -8,7 +8,6 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
   @ViewChild('menu') menuRef: ElementRef;
 
   constructor(public auth: AuthService) {}

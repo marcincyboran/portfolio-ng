@@ -1,104 +1,37 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { HomeComponent } from './home/home.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { BlogComponent } from './blog/blog.component';
-import { CvComponent } from './cv/cv.component';
-import { ContactComponent } from './contact/contact.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-import { SkillsComponent } from './skills/skills.component';
-import { LoginComponent } from './login/login.component';
-import { AddPostComponent } from './admin-panel/add-post/add-post.component';
-import { LoggerComponent } from './admin-panel/logger/logger.component';
-import { PostComponent } from './blog/post/post.component';
-
-import { AuthGuardService } from './_services/auth-guard.service';
-import { MessagesComponent } from './admin-panel/messages/messages.component';
+import { AdminPanelModule } from './admin-panel/admin-panel.module';
+import { BlogModule } from './blog/blog.module';
+import { ContactModule } from './contact/contact.module';
+import { CvModule } from './cv/cv.module';
+import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
+import { PortfolioModule } from './portfolio/portfolio.module';
+import { SkillsModule } from './skills/skills.module';
+import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-    data: { state: 'home' }
-  },
-  {
-    path: 'portfolio',
-    component: PortfolioComponent,
-    data: { state: 'portfolio' }
-  },
-  {
-    path: 'blog',
-    component: BlogComponent,
-    data: { state: 'blog' }
-  },
-  {
-    path: 'post/:id',
-    component: PostComponent,
-    data: { state: 'post' }
-  },
-  {
-    path: 'cv',
-    component: CvComponent,
-    data: { state: 'cv' }
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-    data: { state: 'contact' }
-  },
-  {
-    path: 'skills',
-    component: SkillsComponent,
-    data: { state: 'skills' }
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: { state: 'login' }
-  },
-  {
-    // Work fine with routerLink, but direct url always return false, why...?
-    path: 'admin',
-    component: AdminPanelComponent,
-    data: { state: 'admin' },
-    canActivate: [AuthGuardService],
-    children: [
-      {
-        path: '',
-        redirectTo: 'add',
-        pathMatch: 'full'
-      },
-      {
-        path: 'add',
-        component: AddPostComponent
-      },
-      {
-        path: 'messages',
-        component: MessagesComponent
-      },
-      {
-        path: 'logger',
-        component: LoggerComponent
-      }
-    ]
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    AdminPanelModule,
+    BlogModule,
+    ContactModule,
+    CvModule,
+    HomeModule,
+    LoginModule,
+    PortfolioModule,
+    SkillsModule,
+    PageNotFoundModule,
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class RoutingModule {}

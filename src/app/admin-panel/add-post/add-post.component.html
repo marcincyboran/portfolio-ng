@@ -4,23 +4,17 @@
     <mat-label>Tytuł</mat-label>
     <input ngModel matInput placeholder="" maxlength="20" type="text" name="title" #title required>
     <mat-hint align="end">{{title.value.length}} / 20</mat-hint>
-    <!-- <mat-icon matSuffix>title</mat-icon> -->
-    <!-- <mat-error *ngIf="">error</mat-error> -->
   </mat-form-field>
 
   <mat-form-field color="accent">
     <mat-label>IMG_URL</mat-label>
     <input ngModel matInput placeholder="" type="url" name="img" required>
     <mat-icon matSuffix>link</mat-icon>
-     <!-- <mat-hint align="end">{{img.value.length}} / 256</mat-hint> -->
   </mat-form-field>
 
   <mat-form-field color="accent">
     <mat-label>Treść...</mat-label>
     <textarea ngModel matInput placeholder="" type="text" name="text" required></textarea>
-    <!-- <mat-error *ngIf="">error</mat-error> -->
-    <!-- <mat-hint align="start"><strong>Don't disclose personal info</strong></mat-hint> -->
-    <!-- <mat-hint align="end">{{message.value.length}} / 256</mat-hint> -->
   </mat-form-field>
   <button mat-raised-button type="submit" color="warn" [disabled]="postForm.invalid">Add post</button>
 

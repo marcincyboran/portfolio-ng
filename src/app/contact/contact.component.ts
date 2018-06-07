@@ -1,16 +1,10 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import {
-  NgForm,
-  Validators,
-  FormControl,
-  NgControl,
-  FormGroup
-} from '@angular/forms';
+import { NgForm, Validators, FormControl, NgControl, FormGroup } from '@angular/forms';
 import { ViewChild } from '@angular/core';
 
 import {} from '@types/googlemaps';
 import { HttpContactService } from '../_services/http-contact.service';
-import { Message } from '../interfaces/message';
+import { Message } from '../_interfaces/message';
 
 @Component({
   selector: 'app-contact',
@@ -44,8 +38,6 @@ export class ContactComponent implements OnInit {
         Validators.required
       ])
     });
-    console.log(this.contactForm);
-    console.log(this.contactForm.controls.email);
   }
 
   sendMessage() {
